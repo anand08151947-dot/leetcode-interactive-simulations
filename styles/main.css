@@ -375,3 +375,35 @@ a:hover { text-decoration: underline; }
   #lc-bridge { width: 100%; height: 220px; border-left: none; border-top: 1px solid var(--border); }
   .welcome-grid { grid-template-columns: 1fr; }
 }
+
+/* ---- Mobile (phones ≤ 480px) ---- */
+@media (max-width: 480px) {
+  /* Header */
+  #main-header { padding: 0 10px; gap: 8px; }
+  .header-logo span:last-child { display: none; } /* hide subtitle */
+
+  /* Hide lc-bridge on phone — too much vertical space */
+  #lc-bridge { display: none; }
+
+  /* Sim container: give it a sensible fixed height so canvases aren't squashed */
+  #viz-panel { padding: 8px; gap: 8px; }
+  #sim-container { min-height: 340px; }
+
+  /* Step controls: bigger tap targets */
+  .step-btn { padding: 10px 18px; font-size: 14px; }
+  #step-controls { gap: 10px; }
+
+  /* Sim info strip: tighter */
+  #sim-info-bar { padding: 8px 10px; }
+  #sim-title { font-size: 16px; }
+  .tag { font-size: 10px; padding: 2px 6px; }
+
+  /* Story box */
+  #story-text { font-size: 12.5px; }
+
+  /* Challenge area: scrollable if content overflows */
+  #challenge-area { max-height: 200px; overflow-y: auto; }
+
+  /* Sidebar: full-width overlay on phone */
+  #sidebar { width: 100%; }
+}

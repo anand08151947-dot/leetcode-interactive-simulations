@@ -1,0 +1,22 @@
+{
+  "name": "AlgoAdventures",
+  "short_name": "AlgoAdventures",
+  "description": "Interactive LeetCode algorithm simulations for kids and beginners",
+  "start_url": "/leetcode-interactive-simulations/",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
