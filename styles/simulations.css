@@ -1,0 +1,194 @@
+/* =============================================
+   AlgoAdventures — Simulation Styles
+   ============================================= */
+
+/* ---- Shared SVG/D3 Styles ---- */
+.sim-svg { width: 100%; height: 100%; }
+.node-label { font-family: var(--font-main, 'Nunito', sans-serif); font-weight: 700; }
+.link { stroke: var(--border, #2d3258); stroke-width: 2; fill: none; }
+
+/* ---- Grid Cells (BFS/DFS grids) ---- */
+.grid-cell {
+  rx: 6; ry: 6;
+  transition: fill 0.3s ease;
+  cursor: pointer;
+}
+.grid-cell.empty { fill: #1e2235; stroke: #2d3258; stroke-width: 1; }
+.grid-cell.tree  { fill: #166534; stroke: #15803d; stroke-width: 1; }
+.grid-cell.fire  { fill: #dc2626; stroke: #ef4444; stroke-width: 1; }
+.grid-cell.burned { fill: #292524; stroke: #44403c; stroke-width: 1; }
+.grid-cell.water { fill: #1d4ed8; stroke: #3b82f6; stroke-width: 1; }
+.grid-cell.start { fill: #7c3aed; stroke: #8b5cf6; stroke-width: 2; }
+.grid-cell.visited { fill: #4338ca; stroke: #6366f1; stroke-width: 1; }
+.grid-cell.path  { fill: #f59e0b; stroke: #facc15; stroke-width: 2; }
+.grid-cell.wall  { fill: #1c1917; stroke: #292524; stroke-width: 1; }
+.grid-cell:hover { filter: brightness(1.3); }
+.grid-cell.highlight { filter: brightness(1.5) drop-shadow(0 0 6px currentColor); }
+
+/* ---- Array Bars (Sliding Window, etc.) ---- */
+.array-bar {
+  rx: 4; ry: 4;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+.array-bar.default { fill: #4f5b8a; }
+.array-bar.active  { fill: #4f8ef7; }
+.array-bar.window  { fill: #f59e0b; }
+.array-bar.found   { fill: #4ade80; }
+.array-bar.left-ptr  { fill: #f472b6; }
+.array-bar.right-ptr { fill: #a78bfa; }
+.array-bar.mid-ptr   { fill: #fb923c; }
+.array-bar.eliminated { fill: #1a1d2e; opacity: 0.4; }
+
+/* ---- Tree Nodes ---- */
+.tree-node {
+  fill: #1e2235;
+  stroke: #4f8ef7;
+  stroke-width: 2;
+  transition: fill 0.4s ease, r 0.3s ease;
+}
+.tree-node.visited { fill: #7c3aed; stroke: #a78bfa; }
+.tree-node.active  { fill: #4f8ef7; stroke: #93c5fd; r: 26px; }
+.tree-node.found   { fill: #166534; stroke: #4ade80; }
+.tree-node.current { fill: #f59e0b; stroke: #facc15; filter: drop-shadow(0 0 8px #facc15); }
+.tree-node.backtrack { fill: #7f1d1d; stroke: #f87171; }
+.tree-edge { stroke: #2d3258; stroke-width: 2; fill: none; transition: stroke 0.3s ease; }
+.tree-edge.active { stroke: #4f8ef7; stroke-width: 3; }
+.tree-node-label { fill: #e8eaf6; font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+
+/* ---- Linked List Nodes ---- */
+.ll-node-box { rx: 8; fill: #1e2235; stroke: #4f5b8a; stroke-width: 2; transition: all 0.3s ease; }
+.ll-node-box.slow { fill: #166534; stroke: #4ade80; }
+.ll-node-box.fast { fill: #7c3aed; stroke: #a78bfa; }
+.ll-node-box.meeting { fill: #dc2626; stroke: #f87171; }
+.ll-arrow { stroke: #4f5b8a; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+.ll-cycle-arc { fill: none; stroke: #f59e0b; stroke-width: 2; stroke-dasharray: 5,3; }
+
+/* ---- Pointer Indicators ---- */
+.pointer-label { font-size: 11px; font-weight: 800; text-anchor: middle; }
+.ptr-left  { fill: #f472b6; }
+.ptr-right { fill: #a78bfa; }
+.ptr-mid   { fill: #fb923c; }
+.ptr-slow  { fill: #4ade80; }
+.ptr-fast  { fill: #a78bfa; }
+.ptr-arrow { font-size: 14px; }
+
+/* ---- Hash Map Visualization ---- */
+.hash-bucket { rx: 6; fill: #1e2235; stroke: #2d3258; stroke-width: 1; }
+.hash-bucket.occupied { fill: #1e3a5f; stroke: #4f8ef7; }
+.hash-key   { font-size: 11px; fill: #f472b6; font-weight: 700; font-family: 'Fira Code', monospace; }
+.hash-value { font-size: 11px; fill: #4ade80; font-weight: 700; font-family: 'Fira Code', monospace; }
+.hash-arrow { stroke: #f59e0b; stroke-width: 2; fill: none; stroke-dasharray: 4,2; }
+
+/* ---- Stack Visualization ---- */
+.stack-item { rx: 6; transition: all 0.3s ease; }
+.stack-item.default { fill: #252a42; stroke: #4f5b8a; stroke-width: 1; }
+.stack-item.top { fill: #1e3a5f; stroke: #4f8ef7; stroke-width: 2; }
+.stack-item.popped { fill: #7f1d1d; stroke: #f87171; opacity: 0; }
+.stack-label { fill: #e8eaf6; font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+
+/* ---- Heap / Priority Queue ---- */
+.heap-node { transition: all 0.4s ease; }
+.heap-node.default { fill: #1e2235; stroke: #4f5b8a; stroke-width: 2; }
+.heap-node.min { fill: #7c3aed; stroke: #a78bfa; stroke-width: 2; filter: drop-shadow(0 0 6px #a78bfa); }
+.heap-node.new { fill: #f59e0b; stroke: #facc15; }
+.heap-edge { stroke: #2d3258; stroke-width: 2; fill: none; }
+.heap-label { fill: #e8eaf6; font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+
+/* ---- Trie ---- */
+.trie-node { fill: #1e2235; stroke: #4f5b8a; stroke-width: 2; transition: all 0.3s ease; }
+.trie-node.active { fill: #7c3aed; stroke: #a78bfa; }
+.trie-node.end-word { fill: #166534; stroke: #4ade80; }
+.trie-edge { stroke: #2d3258; stroke-width: 2; }
+.trie-char { fill: #e8eaf6; font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+.trie-edge-label { fill: #f472b6; font-size: 11px; font-weight: 700; text-anchor: middle; }
+
+/* ---- Graph (weighted) ---- */
+.graph-node { fill: #1e2235; stroke: #4f5b8a; stroke-width: 2; transition: all 0.4s ease; cursor: pointer; }
+.graph-node.source { fill: #166534; stroke: #4ade80; }
+.graph-node.target { fill: #7c3aed; stroke: #a78bfa; }
+.graph-node.visited { fill: #1e3a5f; stroke: #4f8ef7; }
+.graph-node.path    { fill: #f59e0b; stroke: #facc15; filter: drop-shadow(0 0 8px #facc15); }
+.graph-edge { stroke: #2d3258; stroke-width: 2; transition: stroke 0.3s ease; }
+.graph-edge.active { stroke: #f59e0b; stroke-width: 3; }
+.graph-edge.path { stroke: #4ade80; stroke-width: 3; }
+.graph-edge-label { fill: #8892b0; font-size: 11px; text-anchor: middle; font-family: 'Fira Code', monospace; }
+.graph-node-label { fill: #e8eaf6; font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+
+/* ---- Union-Find ---- */
+.uf-node { transition: all 0.4s ease; }
+.uf-node-circle { fill: #1e2235; stroke: #4f5b8a; stroke-width: 2; }
+.uf-node.component-0 .uf-node-circle { stroke: #4f8ef7; fill: rgba(79,142,247,0.15); }
+.uf-node.component-1 .uf-node-circle { stroke: #4ade80; fill: rgba(74,222,128,0.15); }
+.uf-node.component-2 .uf-node-circle { stroke: #f472b6; fill: rgba(244,114,182,0.15); }
+.uf-node.component-3 .uf-node-circle { stroke: #fb923c; fill: rgba(251,146,60,0.15); }
+.uf-edge { stroke: #2d3258; stroke-width: 2; }
+.uf-edge.connected { stroke: #4f8ef7; stroke-width: 3; }
+
+/* ---- Interval Timeline ---- */
+.interval-bar { rx: 4; ry: 4; transition: all 0.3s ease; }
+.interval-bar.default { fill: rgba(79,142,247,0.4); stroke: #4f8ef7; stroke-width: 1; }
+.interval-bar.overlap { fill: rgba(248,113,113,0.4); stroke: #f87171; stroke-width: 2; }
+.interval-bar.merged { fill: rgba(74,222,128,0.4); stroke: #4ade80; stroke-width: 2; }
+.interval-bar.selected { fill: rgba(250,204,21,0.4); stroke: #facc15; stroke-width: 2; }
+
+/* ---- D3 Animations ---- */
+@keyframes nodeEnter { from{opacity:0; r:0} to{opacity:1} }
+@keyframes barGrow { from{transform:scaleY(0)} to{transform:scaleY(1)} }
+@keyframes edgeDraw { from{stroke-dashoffset:1000} to{stroke-dashoffset:0} }
+@keyframes fireSpread { 0%{fill:#dc2626} 50%{fill:#f97316} 100%{fill:#dc2626} }
+.fire-anim { animation: fireSpread 0.8s infinite; }
+@keyframes glow { 0%,100%{filter:drop-shadow(0 0 4px #facc15)} 50%{filter:drop-shadow(0 0 12px #facc15)} }
+.glow-anim { animation: glow 1.5s infinite; }
+
+/* ---- Info Boxes inside simulations ---- */
+.sim-info-box {
+  position: absolute;
+  bottom: 12px; left: 12px;
+  background: rgba(13,16,23,0.9);
+  border: 1px solid var(--border, #2d3258);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #e8eaf6;
+  max-width: 220px;
+  backdrop-filter: blur(4px);
+}
+.sim-info-box .info-title { font-weight: 800; color: #4f8ef7; margin-bottom: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.sim-queue-display {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(13,16,23,0.9);
+  border: 1px solid var(--border, #2d3258);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #e8eaf6;
+  max-width: 200px;
+  backdrop-filter: blur(4px);
+}
+.sim-queue-display .queue-title { font-weight: 800; color: #a78bfa; margin-bottom: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.queue-items { display: flex; flex-wrap: wrap; gap: 4px; }
+.queue-chip { background: #252a42; border: 1px solid #4f5b8a; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: 'Fira Code', monospace; }
+.queue-chip.current { background: #1e3a5f; border-color: #4f8ef7; color: #4f8ef7; }
+
+/* ---- Completion Banner ---- */
+.completion-banner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.85);
+  z-index: 10;
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease;
+}
+.completion-content {
+  text-align: center;
+  padding: 40px;
+}
+.completion-emoji { font-size: 64px; margin-bottom: 16px; animation: float 2s infinite; }
+.completion-title { font-size: 28px; font-weight: 900; color: #e8eaf6; margin-bottom: 8px; }
+.completion-subtitle { font-size: 16px; color: #8892b0; margin-bottom: 24px; }
+.completion-stars { font-size: 40px; margin-bottom: 24px; }
+.completion-btn { padding: 12px 32px; background: linear-gradient(135deg, #4f8ef7, #a78bfa); color: #fff; border-radius: 50px; font-size: 15px; font-weight: 800; }

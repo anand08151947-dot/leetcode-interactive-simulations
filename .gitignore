@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Local dev scripts
+start.ps1
+
+# Dev notes (not for public repo)
+notes.md
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

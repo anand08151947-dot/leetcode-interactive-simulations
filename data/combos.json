@@ -1,0 +1,58 @@
+{
+  "combos": [
+    {
+      "id": "bfs-hashmap",
+      "name": "BFS + Hash Map",
+      "emoji": "🔤",
+      "color": "#f87171",
+      "prerequisites": ["bfs", "hashmap-set"],
+      "storyTheme": "Word Ladder Challenge",
+      "storyHook": "Transform 'CAT' into 'DOG' by changing one letter at a time — every intermediate word must be real! BFS finds the SHORTEST transformation path. The Hash Map tracks which words we've already visited (so we don't go in circles). Together they're unbeatable!",
+      "recognitionCue": "Shortest path where each state is a string/word → BFS for levels + HashMap for O(1) visited check. Classic: Word Ladder, Minimum Genetic Mutation.",
+      "tags": ["BFS", "Hash Map", "String", "Graph"],
+      "leetcodeProblems": [
+        { "id": 127, "title": "Word Ladder",               "difficulty": "Hard",   "url": "https://leetcode.com/problems/word-ladder/" },
+        { "id": 433, "title": "Minimum Genetic Mutation",  "difficulty": "Medium", "url": "https://leetcode.com/problems/minimum-genetic-mutation/" },
+        { "id": 752, "title": "Open the Lock",             "difficulty": "Medium", "url": "https://leetcode.com/problems/open-the-lock/" },
+        { "id": 126, "title": "Word Ladder II",            "difficulty": "Hard",   "url": "https://leetcode.com/problems/word-ladder-ii/" }
+      ]
+    },
+    {
+      "id": "heap-sorting",
+      "name": "Heap + Sorting",
+      "emoji": "📍",
+      "color": "#f87171",
+      "prerequisites": ["heap-priority-queue"],
+      "storyTheme": "K Closest Points to Castle",
+      "storyHook": "The king wants to find the K closest treasure spots to his castle! Sort by distance? Too slow for streaming data. Instead, use a Max-Heap of size K — whenever a closer point appears, pop the farthest and push the new one. In the end, the heap holds exactly the K closest!",
+      "recognitionCue": "Top-K closest/farthest/most-frequent → Keep a Heap of size K. For static arrays, Heap+Sort. For streams, just the Heap. Classic: K Closest Points, Top K Frequent.",
+      "tags": ["Heap", "Sorting", "Array", "Math"],
+      "leetcodeProblems": [
+        { "id": 973,  "title": "K Closest Points to Origin",    "difficulty": "Medium", "url": "https://leetcode.com/problems/k-closest-points-to-origin/" },
+        { "id": 347,  "title": "Top K Frequent Elements",       "difficulty": "Medium", "url": "https://leetcode.com/problems/top-k-frequent-elements/" },
+        { "id": 215,  "title": "Kth Largest Element in Array",  "difficulty": "Medium", "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/" },
+        { "id": 692,  "title": "Top K Frequent Words",          "difficulty": "Medium", "url": "https://leetcode.com/problems/top-k-frequent-words/" },
+        { "id": 1,    "title": "Two Sum (with sorting variant)", "difficulty": "Easy",   "url": "https://leetcode.com/problems/two-sum/" }
+      ]
+    },
+    {
+      "id": "dfs-backtracking",
+      "name": "DFS + Backtracking",
+      "emoji": "🌲",
+      "color": "#a78bfa",
+      "prerequisites": ["dfs", "backtracking"],
+      "storyTheme": "Path Sum II — All Treasure Trails",
+      "storyHook": "A treasure hunter wants to find ALL root-to-leaf paths in a magical forest where the path sum equals a target number. She uses DFS to explore deep into the forest, and Backtracking to undo her steps when a path doesn't work — trying every single trail without missing one!",
+      "recognitionCue": "Find ALL valid paths/solutions in a tree/graph → DFS (go deep) + Backtracking (undo and try next). Classic: Path Sum II, Word Search, Palindrome Partitioning.",
+      "tags": ["DFS", "Backtracking", "Tree", "Recursion"],
+      "leetcodeProblems": [
+        { "id": 113, "title": "Path Sum II",                "difficulty": "Medium", "url": "https://leetcode.com/problems/path-sum-ii/" },
+        { "id": 212, "title": "Word Search II",             "difficulty": "Hard",   "url": "https://leetcode.com/problems/word-search-ii/" },
+        { "id": 131, "title": "Palindrome Partitioning",    "difficulty": "Medium", "url": "https://leetcode.com/problems/palindrome-partitioning/" },
+        { "id": 79,  "title": "Word Search",                "difficulty": "Medium", "url": "https://leetcode.com/problems/word-search/" },
+        { "id": 39,  "title": "Combination Sum",            "difficulty": "Medium", "url": "https://leetcode.com/problems/combination-sum/" },
+        { "id": 51,  "title": "N-Queens",                   "difficulty": "Hard",   "url": "https://leetcode.com/problems/n-queens/" }
+      ]
+    }
+  ]
+}

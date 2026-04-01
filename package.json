@@ -1,0 +1,10 @@
+{
+  "name": "algo-adventures",
+  "version": "1.0.0",
+  "description": "Interactive LeetCode simulations for 5th–8th grade students",
+  "scripts": {
+    "dev": "npx serve . --listen 3000 --no-clipboard",
+    "start": "npx serve . --listen 3000"
+  },
+  "license": "MIT"
+}
