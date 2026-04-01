@@ -261,4 +261,5 @@
       setMode: () => {}
     });
   }
+  app.registerSim('sliding-window', { init });
 })();

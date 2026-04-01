@@ -253,4 +253,5 @@
         updateStepIndicator(1,STEPS.length);},
       setMode:()=>{}});
   }
+  app.registerSim('dfs-backtracking', { init });
 })();

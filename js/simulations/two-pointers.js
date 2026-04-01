@@ -352,4 +352,5 @@
       setMode: () => {}
     });
   }
+  app.registerSim('two-pointers', { init });
 })();

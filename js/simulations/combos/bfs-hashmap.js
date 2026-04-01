@@ -209,4 +209,5 @@
         renderAll();updateStepIndicator(1,BFS_PATH.length);},
       setMode:()=>{}});
   }
+  app.registerSim('bfs-hashmap', { init });
 })();

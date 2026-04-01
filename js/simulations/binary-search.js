@@ -229,4 +229,5 @@
         container.querySelectorAll('.bs-win').forEach(e=>e.remove());render();updateStepIndicator(1,4);},
       setMode:()=>{}});
   }
+  app.registerSim('binary-search', { init });
 })();

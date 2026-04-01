@@ -247,4 +247,5 @@
         renderLevels([arr],'split');updateStepIndicator(1,splitLevels.length+mergeLevels.length-2);},
       setMode:()=>{}});
   }
+  app.registerSim('divide-conquer', { init });
 })();

@@ -227,4 +227,5 @@
         updateStepIndicator(1,events.length);},
       setMode:()=>{}});
   }
+  app.registerSim('intervals-merge', { init });
 })();

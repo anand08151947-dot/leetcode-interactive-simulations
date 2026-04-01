@@ -245,4 +245,5 @@
       prevStep:()=>doBack(),
       setMode:()=>{}});
   }
+  app.registerSim('backtracking', { init });
 })();

@@ -232,4 +232,5 @@
         render();updateStepIndicator(1,CANDIES.length+1+QUERIES.length);},
       setMode:()=>{}});
   }
+  app.registerSim('prefix-sum', { init });
 })();

@@ -205,4 +205,5 @@
       prevStep:()=>doReset(),
       setMode:()=>{}});
   }
+  app.registerSim('greedy', { init });
 })();

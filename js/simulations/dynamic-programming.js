@@ -194,4 +194,5 @@
         container.querySelectorAll('.dp-win').forEach(e=>e.remove());render();updateStepIndicator(1,PADS-1);},
       setMode:()=>{}});
   }
+  app.registerSim('dynamic-programming', { init });
 })();

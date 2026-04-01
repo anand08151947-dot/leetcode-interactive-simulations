@@ -194,4 +194,5 @@
         render();updateStepIndicator(1,MONSTERS.length);},
       setMode:()=>{}});
   }
+  app.registerSim('hashmap-set', { init });
 })();

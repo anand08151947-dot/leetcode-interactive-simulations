@@ -325,4 +325,5 @@
       setMode: () => {}
     });
   }
+  app.registerSim('dfs', { init });
 })();

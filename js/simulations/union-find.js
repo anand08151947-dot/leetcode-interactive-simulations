@@ -230,4 +230,5 @@
         renderMap();renderComponents();showNext();updateStepIndicator(1,PAIRS_TO_CONNECT.length);},
       setMode:()=>{}});
   }
+  app.registerSim('union-find', { init });
 })();

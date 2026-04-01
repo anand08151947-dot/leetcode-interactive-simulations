@@ -312,4 +312,5 @@
       container.querySelectorAll('.tr-win').forEach(e=>e.remove());
       drawTrie('');updateStepIndicator(0,TARGET_SPELLS.length);},setMode:()=>{}});
   }
+  app.registerSim('trie', { init });
 })();

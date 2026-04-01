@@ -220,4 +220,5 @@
         renderMap();renderHeap();updateStepIndicator(1,STARS.length);},
       setMode:()=>{}});
   }
+  app.registerSim('heap-sorting', { init });
 })();

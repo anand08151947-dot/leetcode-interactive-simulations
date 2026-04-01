@@ -222,4 +222,5 @@
         renderNodes();updateStepIndicator(1,7);},
       setMode:()=>{}});
   }
+  app.registerSim('fast-slow-pointers', { init });
 })();

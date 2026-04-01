@@ -231,4 +231,5 @@
         renderMissions();updateStepIndicator(1,MISSIONS.length);},
       setMode:()=>{}});
   }
+  app.registerSim('heap-priority-queue', { init });
 })();

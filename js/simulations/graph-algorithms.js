@@ -257,4 +257,5 @@
         renderMap();renderDists();updateStepIndicator(1,8);},
       setMode:()=>{}});
   }
+  app.registerSim('graph-algorithms', { init });
 })();

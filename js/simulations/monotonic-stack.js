@@ -215,4 +215,5 @@
         container.querySelectorAll('.ms-win').forEach(e=>e.remove());render();updateStepIndicator(1,HEIGHTS.length);},
       setMode:()=>{}});
   }
+  app.registerSim('monotonic-stack', { init });
 })();
