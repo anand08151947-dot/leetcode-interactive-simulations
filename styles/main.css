@@ -385,24 +385,40 @@ a:hover { text-decoration: underline; }
   /* Hide lc-bridge on phone — too much vertical space */
   #lc-bridge { display: none; }
 
-  /* Sim container: give it a sensible fixed height so canvases aren't squashed */
-  #viz-panel { padding: 8px; gap: 8px; }
-  #sim-container { min-height: 340px; }
+  /* Full-page scroll layout: let the sim screen scroll naturally */
+  #simulation-screen { overflow-y: auto; }
+  #sim-panels { flex-direction: column; overflow: visible; min-height: unset; }
+  #viz-panel { padding: 8px; gap: 8px; overflow: visible; }
 
-  /* Step controls: bigger tap targets */
-  .step-btn { padding: 10px 18px; font-size: 14px; }
-  #step-controls { gap: 10px; }
+  /* Sim container: fixed height, scrollable — sims render at full size inside */
+  #sim-container {
+    min-height: 420px;
+    height: 420px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Let sim roots breathe — don't clip their internal layouts */
+  #sim-container > div {
+    min-width: 360px;
+    min-height: 400px;
+  }
+
+  /* Step controls: bigger tap targets (44px min per Apple HIG) */
+  .step-btn { padding: 12px 20px; font-size: 15px; min-height: 44px; }
+  #step-controls { gap: 12px; }
+  #step-indicator { font-size: 12px; }
 
   /* Sim info strip: tighter */
   #sim-info-bar { padding: 8px 10px; }
   #sim-title { font-size: 16px; }
   .tag { font-size: 10px; padding: 2px 6px; }
 
-  /* Story box */
-  #story-text { font-size: 12.5px; }
+  /* Story box: smaller font */
+  #story-text { font-size: 12px; }
+  #story-bar { padding: 8px 10px; }
 
-  /* Challenge area: scrollable if content overflows */
-  #challenge-area { max-height: 200px; overflow-y: auto; }
+  /* Challenge area: scrollable */
+  #challenge-area { max-height: 220px; overflow-y: auto; }
 
   /* Sidebar: full-width overlay on phone */
   #sidebar { width: 100%; }
